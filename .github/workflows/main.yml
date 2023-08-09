@@ -30,3 +30,15 @@ jobs:
         build_dir: ${{ env.PUBLISH_DIR }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Add CNAME file
+      run: |
+        git config --global user.name 'Github Action'
+        git config --global user.email 'action@github.com'
+        git fetch
+        git checkout $TARGET_BRANCH
+        git checkout master CNAME
+        git commit -am "add CNAME"
+        git push origin $TARGET_BRANCH
+      env:
+        TARGET_BRANCH: gh-pages
