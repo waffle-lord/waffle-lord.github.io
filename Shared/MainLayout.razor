@@ -1,15 +1,25 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
-    <NavMenu />
-</div>
+<MudThemeProvider IsDarkMode="true"/>
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-    </div>
-
-    <div class="content px-4">
-        @Body
-    </div>
-</div>
+<MudLayout>
+    <MudProgressLinear Striped Value="100" Size="Size.Medium"/>
+    <MudGrid style="height:100vh; width:100vw;">
+        <MudItem Class="d-flex align-center justify-center mud-width-full">
+            <MudCard Style="width:400px">
+                <MudCardHeader>
+                    <MudIcon Icon="@Icons.Material.Filled.Construction" />
+                <MudText>We're workin here!</MudText>
+            </MudCardHeader>
+                <MudCardContent>
+                    <MudText>
+                        This site is under construction and will probably never be finished because I'm lazy.
+                    </MudText>
+                </MudCardContent>
+                <MudCardActions>
+                     <MudLink Target="_blank" Href="https://github.com/waffle-lord/waffle-lord.github.io">Check out my garbage code here</MudLink>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</MudLayout>
